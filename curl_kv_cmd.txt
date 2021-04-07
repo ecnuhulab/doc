@@ -1,0 +1,2 @@
+curl -X PUT -d "kvdata12345678" http://127.0.0.1:8500/v1/kv/mykey //create a key
+echo "a3ZkYXRhMTIzNDU2Nzg=" | base64 -d //

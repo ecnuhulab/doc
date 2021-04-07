@@ -1,0 +1,10 @@
+//FILE NAME: startConsulServer.sh
+#!/bin/bash
+nohup mkdir -p /tmp/consul & consul agent -server -ui -rejoin -bootstrap-expect=3 -data-dir=/tmp/consul -node=consul-server02 -bind=192.168.0.152 -config-dir=/etc/consul.d/ -join=192.168.0.151 &
+
+//FILE NAME: startConsulClient.sh 
+#!/bin/bash
+nohup mkdir -p /tmp/consul & consul agent -data-dir=/tmp/consul -node=consul-client01 -bind=192.168.0.154 -enable-script-checks=true -config-dir=/etc/consul.d -join=192.168.0.151 &
+
+//server1不需要 -join=192.168.0.151
+//自行修改ip

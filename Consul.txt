@@ -1,0 +1,50 @@
+安装go，curl
+
+sudo apt-get install go
+sudo apt-get install curl
+
+编译安装Consul的步骤 
+
+preface :
+ 
+
+All the steps below is performed in ubuntu 18.04 x86_64 system
+
+
+
+1. download consul code :  
+ git clone https://github.com/hashicorp/consul.git
+
+ 
+
+2. change china go source when we need to download go denpendency lib codes 
+
+ 
+   go env -w  GOPROXY=https://goproxy.io,direct
+ 
+   go env | grep GOPROXY
+
+
+
+3. start to compile consul
+ 
+ 
+
+   cd consul/
+  
+ sudo apt-get install make
+  
+ sudo apt-get install gcc
+  
+ make tools
+
+   make dev
+
+
+4. 30 min later:
+
+
+   cd bin
+ 
+   ./consul -v
+
